@@ -122,7 +122,7 @@ void PropagateColor(int i, int j, int newColorIndex)
 		Square* current = stack.top();
 		stack.pop();
 
-		// Check if the currently checked square was already checked during this turn
+		// Skip if the currently checked square was already checked during this turn
 		if (current->visitedThisTurn)
 		{
 			continue;
@@ -189,6 +189,8 @@ int main(int argc, char* args[])
 	Window GameWindow;
 	Application App(&GameWindow);
 	Layer UI;
+
+	// UI Properties
 
 	int buttonMargin = 20;
 	int offset = -350;

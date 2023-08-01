@@ -1,3 +1,5 @@
+// Thanks to www.studyplan.dev
+
 #pragma once
 #include <vector>
 #include <SDL.h>
