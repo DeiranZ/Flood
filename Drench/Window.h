@@ -1,3 +1,5 @@
+// Thanks to www.studyplan.dev
+
 #pragma once
 #include <SDL.h>
 #include <string>
@@ -41,7 +43,6 @@ public:
     }
 
     void RenderFrame() {
-        //SDL_UpdateWindowSurface(SDLWindow);
         SDL_RenderPresent(SDLRenderer);
     }
 
@@ -52,18 +53,8 @@ public:
     }
 
     void SetTitle(std::string NewTitle) {
-        // https://wiki.libsdl.org/SDL_SetWindowTitle
         SDL_SetWindowTitle(
             SDLWindow, NewTitle.c_str()
-        );
-    }
-
-    void ChangeWindowSize(int Amount) {
-        // https://wiki.libsdl.org/SDL_SetWindowSize
-        SDL_SetWindowSize(
-            SDLWindow,
-            windowWidth += Amount,
-            windowHeight += Amount
         );
     }
 
@@ -75,29 +66,6 @@ public:
     [[nodiscard]]
     int GetWindowHeight() const {
         return windowHeight;
-    }
-
-    int MoveRelative(int x, int y) {
-        // https://wiki.libsdl.org/SDL_GetWindowPosition
-        int CurrentX; int CurrentY;
-        SDL_GetWindowPosition(
-            SDLWindow, &CurrentX, &CurrentY
-        );
-
-        // https://wiki.libsdl.org/SDL_SetWindowPosition
-        SDL_SetWindowPosition(
-            SDLWindow, CurrentX + x, CurrentY + y
-        );
-    }
-
-    void GrabMouse() {
-        // https://wiki.libsdl.org/SDL_SetWindowMouseGrab
-        SDL_SetWindowMouseGrab(SDLWindow, SDL_TRUE);
-    }
-
-    void FreeMouse() {
-        // https://wiki.libsdl.org/SDL_SetWindowMouseGrab
-        SDL_SetWindowMouseGrab(SDLWindow, SDL_FALSE);
     }
 
     bool IsWindowValid()
