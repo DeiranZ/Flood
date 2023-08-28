@@ -7,7 +7,7 @@
 class UIButton : public EventReceiver
 {
 public:
-	UIButton(Application* App, SDL_Rect* Rect, SDL_Color* BaseColor, SDL_Color* HoverColor, std::function<void()> OnPressed) :
+	UIButton(Application* App, const SDL_Rect* Rect, const SDL_Color* BaseColor, const SDL_Color* HoverColor, std::function<void()> OnPressed) :
 		SDLRenderer(App->GetWindowRenderer()),
 		App(App),
 		Rect(*(Rect)),

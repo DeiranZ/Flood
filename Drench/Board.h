@@ -28,7 +28,7 @@ public:
 
 	void GetSurroundingSquares(int x, int y, std::vector<Square*>* target)
 	{
-		Vector2 positions[4] = { Vector2(x - 1, y),
+		const Vector2 positions[4] = { Vector2(x - 1, y),
 			Vector2(x, y - 1),
 			Vector2(x, y + 1),
 			Vector2(x + 1, y)

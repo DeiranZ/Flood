@@ -52,9 +52,9 @@ public:
         bgBlue = B;
     }
 
-    void SetTitle(std::string NewTitle) {
+    void SetTitle(const std::string* NewTitle) {
         SDL_SetWindowTitle(
-            SDLWindow, NewTitle.c_str()
+            SDLWindow, NewTitle->c_str()
         );
     }
 

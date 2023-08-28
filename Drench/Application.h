@@ -7,7 +7,7 @@
 class Application
 {
 public:
-	Application(Window* Window) : mWindow(Window)
+	explicit Application(Window* Window) : mWindow(Window)
 	{
 
 	}

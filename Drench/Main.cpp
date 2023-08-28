@@ -97,7 +97,6 @@ void BuildBoard(Window* GameWindow)
 		for (int j = 0; j < boardSize; j++)
 		{
 			int randomColorIndex = PaletteDistribution(Generator);
-			Color* randomColor = &palette[randomColorIndex];
 
 			GameBoard.AddSquare(i, j, squareSize, randomColorIndex);
 		}
@@ -163,7 +162,7 @@ void ChooseColor(int index, Window* GameWindow)
 
 	for (int i = 0; i < totalSquares; i++)
 	{
-		Square* sq = &GameBoard.squares[i];
+		const Square* sq = &GameBoard.squares[i];
 
 		if (sq->color == ActiveColor) singleColoredSquares += 1;
 	}
